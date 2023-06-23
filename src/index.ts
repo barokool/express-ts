@@ -1,21 +1,13 @@
 import express from "express";
 
-const application = express();
+const app = express();
 
 const port = 3000;
 
-application
-  .get("/", (req, res) => {
-    res.send({
-      message: "Hello, World!",
-    });
-  })
-  .get("/random", (req, res) => {
-    res.send({
-      number: Math.floor(Math.random() * 100),
-    });
-  });
+app.get("/", (req, res) => {
+  res.send("Hello there! Api is working");
+});
 
-application.listen(port, () => {
-  console.log(`Application listening on port ${port}`);
+app.listen(port, () => {
+  console.log(`app listening on port ${port}`);
 });
